@@ -1,4 +1,3 @@
-// Calendar.js
 
 import './Calendar.css'
 import { useState, useEffect } from 'react';
@@ -20,7 +19,7 @@ const Calendar = () => {
 
   const fetchEvents = async () => {
     setLoading(true);
-    const monthTable = months[selectedMonth];  // e.g. "january", "february"
+    const monthTable = months[selectedMonth]; 
     const { data, error } = await supabase
       .from(monthTable)
       .select('*')
@@ -36,8 +35,8 @@ const Calendar = () => {
 
   return (
     <div className='calendarMainBox'>
-      <h1  style={{ fontFamily: 'courier'}}>{months[selectedMonth].toUpperCase()}</h1>
-      <div >
+      <h1  style={{ fontFamily: 'courier'}}>{months[selectedMonth].toUpperCase()} 2024</h1>
+     
       <h3 style={{ fontFamily: 'courier'}}>choose a month</h3>
         <select
           value={selectedMonth}
@@ -49,7 +48,7 @@ const Calendar = () => {
             </option>
           ))}
         </select>
-      </div>
+   
 
       {loading ? 
       <p>Loading events...</p> : 
