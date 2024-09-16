@@ -1,63 +1,68 @@
+// Calendar.js
+import { useState, useEffect } from 'react';
+import { supabase } from '../../services/supabase';
 
-import { useState, useEffect } from 'react'
-import { supabase } from '../../services/supabase'
-import './Calendar.css'
+const months = [
+  'january', 'february', 'march', 'april', 'may', 'june', 
+  'july', 'august', 'september', 'october', 'november', 'december'
+];
 
-export default function Calendar() {
+const Calendar = () => {
+  const [selectedMonth, setSelectedMonth] = useState(new Date().getMonth());
+  const [events, setEvents] = useState([]);
+  const [loading, setLoading] = useState(false);
 
+  useEffect(() => {
+    fetchEvents();
+  }, [selectedMonth]);
 
-    const [data, setData] = useState([]);
-    const [activeTable, setActiveTable] = useState('september');
+  const fetchEvents = async () => {
+    setLoading(true);
+    const monthTable = months[selectedMonth];  // e.g. "january", "february"
+    const { data, error } = await supabase
+      .from(monthTable)
+      .select('*')
+      .order('id', { ascending: true });
 
-
-    const fetchData = async () => {
-        const { data } = await supabase
-          .from(activeTable) 
-          .select('*')
-          .order('id', { ascending: true });
-          
-          setData(data);
-        
-      }
-
-      useEffect(() => {
-        fetchData();
-      }, [activeTable]);
-
-      const handleTableChange = (newTable) => {
-        setActiveTable(newTable)
-      
-      };
-
-
-      
+    if (error) {
+      console.error('Error fetching events:', error);
+    } else {
+      setEvents(data);
+    }
+    setLoading(false);
+  };
 
   return (
-    <div className="calendarMainBox">
-     
-        <h3 style={{ padding: '1%', fontFamily: 'courier'}}>Smash Burger Bros Calendar</h3>
-    <p className='calendarHeading'>month 2024</p>
-    <div style={{ display: 'inline-flex'}}>
-    <button onClick={() => {handleTableChange('january')}}>january</button>
-    <button onClick={() => {handleTableChange('february')}}>february</button>
-    <button onClick={() => {handleTableChange('march')}}>march</button>
-    <button onClick={() => {handleTableChange('april')}}>april</button>
-    <button onClick={() => {handleTableChange('may')}}>may</button>
-    <button onClick={() => {handleTableChange('june')}}>june</button>
-    <button onClick={() => {handleTableChange('july')}}>july</button>
-    <button onClick={() => {handleTableChange('august')}}>august</button>
-    <button onClick={() => {handleTableChange('september')}}>september</button>
-    <button onClick={() => {handleTableChange('october')}}>october</button>
-    <button onClick={() => {handleTableChange('november')}}>november</button>
-    <button onClick={() => {handleTableChange('december')}}>december</button>
+    <div>
+      <h1>Event Calendar</h1>
+      <div>
+        <label>Select Month: </label>
+        <select
+          value={selectedMonth}
+          onChange={(e) => setSelectedMonth(Number(e.target.value))}
+        >
+          {months.map((month, index) => (
+            <option key={month} value={index}>
+              {month.charAt(0).toUpperCase() + month.slice(1)}
+            </option>
+          ))}
+        </select>
+      </div>
+
+      {loading ? 
+      <p>Loading events...</p> : 
+      <div>{events.map((event) => (
+      <div 
+      key={event.id}>
+        {event.id}
+        {event.event}
+        {event.day}
+        </div>))}
+      </div>
+        }
+
     </div>
-    <div className='calendarSubBox'>
+  );
+};
 
-    
-    </div>
-
-    </div>
-  )
-}
-
-
+export default Calendar;
