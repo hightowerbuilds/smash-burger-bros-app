@@ -15,8 +15,8 @@
 }
 
 .calendarDayBox {
-    height: 5vh;
-    width: fit-content;
+    height: 2vh;
+    width: 100%;
     border: 1px black solid;
     border-radius: 2%;
     margin: 1%;

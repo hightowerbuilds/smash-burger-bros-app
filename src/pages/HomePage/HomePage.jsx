@@ -1,4 +1,5 @@
 
+
 import perfection from '../../images/browser/happyHomer.jpg'
 import carCrusher from '../../images/browser/carCrusher.png'
 import cheeseburger from '../../images/browser/cheeseburger.png'
@@ -6,6 +7,7 @@ import happyCow from '../../images/browser/happyCow.jpeg'
 import smashBurgerLargeLogo from '../../images/browser/smashBurgerLargeLogo.png'
 import NavBar from '../../components/NavBar/NavBar'
 import './HomePage.css'
+import Todos from '../../components/Todos'
 
 export default function HomePage() {
   return (
@@ -19,7 +21,7 @@ export default function HomePage() {
       <img className='homePageSmashLogo' src={smashBurgerLargeLogo} />
       </div>
     </div>
-
+    <Todos />
 <div className='homePageSectionOuterBox'>
   <div className='homePageDescription'>
     <h2 style={{ marginBottom: '1%'}}>Burgers so good you'll literally have a million!</h2>

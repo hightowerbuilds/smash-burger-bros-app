@@ -136,18 +136,25 @@ const nameSwitch = (selectedMonth) => {
     }
 }
 
+
+
 const week = (monthLength, first ) => { 
         if (!first) {
-          return( newDays['sunday'].map((day) => (
+          return(
+             newDays['sunday'].map((day) => (
                 day[1] < 1 || day[1] > monthLength ? 
-                <div className='calendarDayBox' key={day[1]}>{day[0]} <br /> {'X'}</div> : 
-                <div className='calendarDayBox' key={day.keys}>{day[0]} <br /> {day[1]}</div>
-               )))
+                <div className='calendarDayBox' key={day[1]}>{day[0]} {'X'}</div> : 
+                <div className='calendarDayBox' key={day.keys}>{day[0]} {day[1]}</div>
+               ))
+            )
         } else {
            return( newDays[first].map((day) => (
                 day[1] < 1 || day[1] > monthLength ? 
-                <div className='calendarDayBox' key={day[1]}>{day[0]} <br /> {'X'}</div> : 
-                <div className='calendarDayBox' key={day.keys}>{day[0]} <br /> {day[1]}</div>
+              '' : 
+                <div className='calendarDayBox' key={day.keys}>
+                    {day[0]} {day[1]} 
+               
+                </div>
                )))
         }
   }
@@ -165,7 +172,7 @@ const handleInputChange = (event) => {
 
   return (
     <div className="calendarMainBox">
-        <h3 style={{ fontFamily: 'courier'}}>Smash Burger Bros Calendar</h3>
+        <h3 style={{ padding: '1%', fontFamily: 'courier'}}>Smash Burger Bros Calendar</h3>
     <p className='calendarHeading'>{nameSwitch(selectedMonth)} 2024</p>
     {
     refresh ? 
