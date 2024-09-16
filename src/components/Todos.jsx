@@ -7,10 +7,12 @@ export default function Todos() {
 
   useEffect(() => {
     async function getTodos() {
-      const { data: todos } = await supabase.from('september').select('*').order('id', { ascending: true });
+      const { data: todos, error } = await supabase.from('september').select('*').order('id', { ascending: true });
 
-      if (todos.length >= 1) {
-        setTodos(todos)
+      if (error) {
+        console.error('Error fetching data:', error);
+      } else {
+        setTodos(todos);
       }
     }
 
@@ -21,7 +23,7 @@ export default function Todos() {
     <div>
       {todos.map((todo) => (
         <li key={todo.id}>
-        {todo.id} {todo.day}   {todo.event}
+        {todo.id} {todo.day}  {todo.event}
             
         </li>
       ))}
