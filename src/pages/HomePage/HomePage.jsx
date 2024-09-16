@@ -48,7 +48,7 @@ export default function HomePage() {
 
 <div className='homePageSectionOuterBox'>
   <div className='homePageDescription'>
-    <h2 style={{ marginBottom: '1%'}}>THEY MAKE YOU SMARTER TOO???</h2>
+    <h2 style={{ marginBottom: '1%'}}>THEY MAKE YOU SMARTER TOO??? test</h2>
   <p>
     SO what is it about these burgers thats so smart Mr. Fudd? 
     <br /><br />
