@@ -165,7 +165,7 @@ const handleInputChange = (event) => {
 
   return (
     <div className="calendarMainBox">
-        <h3 style={{ fontFamily: 'courier'}}>Smash Burger Calendar</h3>
+        <h3 style={{ fontFamily: 'courier'}}>Smash Burger Bros Calendar</h3>
     <p className='calendarHeading'>{nameSwitch(selectedMonth)} 2024</p>
     {
     refresh ? 
