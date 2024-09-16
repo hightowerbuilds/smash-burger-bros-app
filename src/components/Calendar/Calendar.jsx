@@ -197,7 +197,6 @@ const handleInputChange = (event) => {
     
     <div className='calendarSubBox'>
         {week(monthLength, firstDay)}      
-        {console.log( typeof selectedMonth)}
     </div>
 
     </div>

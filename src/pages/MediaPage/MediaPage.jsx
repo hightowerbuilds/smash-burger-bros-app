@@ -1,9 +1,9 @@
 
 import './MediaPage.css'
 import Calendar from "../../components/Calendar/Calendar";
-import Gallery from "../../components/Gallery/Gallery";
-import NavBar from "../../components/NavBar/NavBar";
 
+import NavBar from "../../components/NavBar/NavBar";
+import Todos from '../../components/Todos'
 
 export default function MediaPage() {
   return (
@@ -13,10 +13,11 @@ export default function MediaPage() {
 
       <div className='mediaPageSectionSubBox'>
         <Calendar />
+     
       </div>
 
       <div className='mediaPageSectionSubBox'>
-        <Gallery />
+      <Todos />
       </div>
       
       </div>

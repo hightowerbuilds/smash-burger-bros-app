@@ -7,7 +7,7 @@ export default function Todos() {
 
   useEffect(() => {
     async function getTodos() {
-      const { data: todos } = await supabase.from('todos').select('*')
+      const { data: todos } = await supabase.from('september').select('*').order('id', { ascending: true });
 
       if (todos.length >= 1) {
         setTodos(todos)
@@ -20,7 +20,10 @@ export default function Todos() {
   return (
     <div>
       {todos.map((todo) => (
-        <li key={todo.id}>{todo.text}</li>
+        <li key={todo.id}>
+        {todo.id} {todo.day}   {todo.event}
+            
+        </li>
       ))}
     </div>
   )
