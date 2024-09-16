@@ -178,7 +178,8 @@ const handleInputChange = (event) => {
     refresh ? 
     <div>
       <input
-        type='month'  
+        type='month'
+        list='months'  
         value={selectedMonth}
         onChange={handleInputChange}
         placeholder="Select a month"
