@@ -1,0 +1,23 @@
+.NavBarFontSpecial {
+    font-family: "Fascinate Inline", system-ui;
+    font-weight: 900;
+    color: orangered;
+    font-size: 32px;
+}
+
+.NavBarSubBox {
+    display: inline-flex;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.NavBarMainBox {
+    display: inline-flex;
+    width: 100%;
+    border-bottom: 12px orangered dotted;
+}
+
+.NavBarLogo {
+    margin: .5%;
+}

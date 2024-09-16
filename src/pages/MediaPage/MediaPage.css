@@ -1,0 +1,17 @@
+
+.mediaPageSectionOuterBox {
+    padding: 3%;
+
+}
+
+.mediaPageSectionSubBox{   
+    display: inline-flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: auto;
+    border: 10px dodgerblue solid;
+    border-radius: 1%;
+    font-family: monospace;
+    font-size: 22px;
+    background-color: skyblue;
+}

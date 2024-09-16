@@ -1,0 +1,31 @@
+
+.calendarMainBox {
+    width: 100%;
+    height: 95%;
+    margin: 1%;
+}
+
+.calendarHeading {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    font-family: "Fascinate Inline", system-ui;
+    font-weight: 900;
+    font-size: 32px;
+}
+
+.calendarDayBox {
+    height: 5vh;
+    width: fit-content;
+    border: 1px black solid;
+    border-radius: 2%;
+    margin: 1%;
+    padding: 2%;
+}
+    
+.calendarSubBox {
+    display: inline-flex;
+    flex-wrap: wrap;
+    font-size: 16px;
+    width: fit-content;
+}
