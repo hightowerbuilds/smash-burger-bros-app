@@ -2,7 +2,7 @@
 import './Calendar.css'
 import { useState, useEffect } from 'react';
 import { supabase } from '../../services/supabase';
-import { NavLink } from 'react-router-dom';
+
 
 const months = [
   'january', 'february', 'march', 'april', 'may', 'june', 
@@ -38,7 +38,6 @@ const Calendar = () => {
     <div className='calendarMainBox'>
       <h1  style={{ fontFamily: 'courier'}}>{months[selectedMonth].toUpperCase()} 2024</h1>
      
-      <h3 style={{ fontFamily: 'courier'}}>choose a month</h3>
         <select
           value={selectedMonth}
           onChange={(e) => setSelectedMonth(Number(e.target.value))}
@@ -68,7 +67,7 @@ const Calendar = () => {
        <p style={{ marginLeft: '1%'}}> 
             {event.event}
        </p>
-       <NavLink to='https://www.google.maps.com'>tag</NavLink>
+     
    
         </div>))}
     
