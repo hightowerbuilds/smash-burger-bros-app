@@ -1,4 +1,6 @@
 // Calendar.js
+
+import './Calendar.css'
 import { useState, useEffect } from 'react';
 import { supabase } from '../../services/supabase';
 
@@ -33,14 +35,14 @@ const Calendar = () => {
   };
 
   return (
-    <div>
-      <h1>Event Calendar</h1>
-      <div>
-        <label>Select Month: </label>
+    <div className='calendarMainBox'>
+      <h1  style={{ fontFamily: 'courier'}}>{months[selectedMonth].toUpperCase()}</h1>
+      <div >
+      <h3 style={{ fontFamily: 'courier'}}>choose a month</h3>
         <select
           value={selectedMonth}
           onChange={(e) => setSelectedMonth(Number(e.target.value))}
-        >
+          className='calendarMonthSelect'  >
           {months.map((month, index) => (
             <option key={month} value={index}>
               {month.charAt(0).toUpperCase() + month.slice(1)}
@@ -53,10 +55,10 @@ const Calendar = () => {
       <p>Loading events...</p> : 
       <div>{events.map((event) => (
       <div 
-      key={event.id}>
-        {event.id}
-        {event.event}
-        {event.day}
+        key={event.id}
+        className='calendarSubBox'>
+       
+       {`${event.id}--${event.day}: ${event.event} `} 
         </div>))}
       </div>
         }
