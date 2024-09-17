@@ -4,7 +4,7 @@ import perfection from '../../images/browser/happyHomer.jpg'
 import carCrusher from '../../images/browser/carCrusher.png'
 import cheeseburger from '../../images/browser/cheeseburger.png'
 import happyCow from '../../images/browser/happyCow.jpeg'
-import smashBurgerLargeLogo from '../../images/browser/smashBurgerLargeLogo.png'
+import smashBurgerLargeLogo from '../../images/browser/smashBurgerBrosLarge.png'
 import NavBar from '../../components/NavBar/NavBar'
 import './HomePage.css'
 
