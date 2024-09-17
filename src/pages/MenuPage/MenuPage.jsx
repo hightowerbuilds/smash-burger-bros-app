@@ -4,10 +4,10 @@ import NavBar from "../../components/NavBar/NavBar"
 export default function MenuPage() {
   return (
     <div className='menuPageMainBox'>
-      <NavBar />
-<br />
+       <NavBar />
+    <div className='menuPageOuterBox'>
     <div className='menuPageInnerBox' >
-        <p className='menuPageSmashHeading'>SMASH BURGER</p>
+        <p className='menuPageSmashHeading'>SMASH BURGER BROS.</p>
       
         <p className='menuPageMenuBox'>
 
@@ -36,6 +36,12 @@ export default function MenuPage() {
         </p>
 
       </div>
+    </div>
+    
+      
+      
+
+   
     </div>
   )
 }

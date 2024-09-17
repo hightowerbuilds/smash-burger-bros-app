@@ -5,11 +5,22 @@
     height: auto;
 }
 
-.menuPageInnerBox {
+.menuPageOuterBox {
     width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 5%;
+  
+}
+
+.menuPageInnerBox {
+    width: 70%;
     height: auto;
     display: inline-flex;
+    justify-content: center ;
     flex-wrap: wrap;
+    border: 10px dodgerblue solid;
+    border-radius: 2%;
 }
 
 .menuPageSmashHeading {
@@ -19,6 +30,8 @@
     width: 100%;
     display: flex;
     justify-content: center;
+    background-color:beige;
+    border-bottom: 5px pink dashed;
 }
 
 .menuPageMenuBox {
@@ -26,7 +39,7 @@
     flex-wrap: wrap;
     width: 100%;
     justify-content: center;
-   
+    background-color: aliceblue;
 }
 
 .menuPageSectionTitle {
@@ -35,10 +48,12 @@
     justify-content: center;
     font-size: 35px;
     font-family: "Fascinate Inline", system-ui;
-    
+    background-color: aliceblue;
+    border-bottom: 2px pink dashed;
 }
 
 .menuPageMenuItem {
     font-family: 'Courier New', Courier, monospace;
     font-size: 32px;
+    background-color: aliceblue;
 }
