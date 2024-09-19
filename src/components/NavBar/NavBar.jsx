@@ -1,7 +1,7 @@
 
 
 import { NavLink } from "react-router-dom"
-import smashBurgerLogo from '../../images/browser/smashBurgerLogo.jpg'
+import smashBurgerLogo from '../../images/browser/smashBurgerBrosSmall.png'
 import './NavBar.css'
 
 export default function NavBar() {
