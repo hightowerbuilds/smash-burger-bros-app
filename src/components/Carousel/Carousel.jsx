@@ -1,7 +1,6 @@
 
 import './Carousel.css'
 import { useEffect, useState } from 'react';
-
 import cheeseburger from '../../images/browser/cheeseburger.png'
 import happyHomer from '../../images/browser/happyHomer.jpg'
 import happyCow from '../../images/browser/happyCow.jpeg'
@@ -35,12 +34,10 @@ export default function Carousel() {
     }, [images.length]);
 
   return (
-    <div>
-        
-        <div className="carousel">
-            <img src={images[currentIndex]} alt={`Image ${currentIndex + 1}`} />
+        <div>
+            <div className="carousel">
+                <img src={images[currentIndex]} alt={`Image ${currentIndex + 1}`} />
+            </div>
         </div>
-  
-  </div>
   )
 }

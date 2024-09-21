@@ -21,3 +21,13 @@
 .NavBarLogo {
     margin: .5%;
 }
+
+.NavBarTitle {
+    width: 100%;
+    margin: 1%;
+    display: flex;
+    justify-content: center;
+    font-family: "Smokum";
+    font-size: 62px;
+    font-weight: 900;
+}
