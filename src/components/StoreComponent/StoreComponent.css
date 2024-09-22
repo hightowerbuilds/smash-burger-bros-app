@@ -1,7 +1,4 @@
-
-.storePageMainBox {}
-
-.storePageSideBarMainBox {
+.storeComponentSideBarMainBox {
     border-right: 1px orangered solid;
     border-bottom: 1px orangered dotted;
     position: absolute;
@@ -11,4 +8,8 @@
     padding: 1%;
     font-family: 'smokum';
     font-size: 22px;
+}
+
+.storeComponentSideBarButton {
+    width: 100%;
 }
