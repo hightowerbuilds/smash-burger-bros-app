@@ -1,6 +1,26 @@
+
+
 import './SideBar.css'
+import Shirts from '../StoreAisles/Shirts/Shirts'
+import Sweatshirts from '../StoreAisles/Sweatshirts/Sweatshirts'
+import Hats from '../StoreAisles/Hats/Hats'
+import Cooksbooks from '../StoreAisles/Cookbooks/Cookbooks'
+import Aprons from '../StoreAisles/Aprons/Aprons'
+
 
 export default function SideBar() {
+
+const aisles = {
+  shirts: <Shirts />,
+  sweathshirts: <Sweatshirts />,
+  hats: <Hats />,
+  aprons: <Aprons />,
+  cookbooks: <Cooksbooks/>,
+}
+
+
+
+
   return (
     <div>
        <div className='storePageSideBarThreads'>
