@@ -11,8 +11,7 @@
 }
 
 .shoppingCartCurrentBox {
-    display: flex;
-    justify-content: center;
+   
     background-color: lightcyan;
     margin: 1%;
     padding: 1%;

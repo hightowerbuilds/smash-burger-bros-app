@@ -6,21 +6,19 @@ export default function ShoppingCart() {
     <div className='shoppingCartMainBox'>
      
         <div className='shoppingCartCurrentBox'>
-        <p style={{ padding: '5%', borderRadius: '2%'}}>
-            <h3>
-                current items
-            </h3>
-            <ul >
-                <li>item one</li>
-                <li>item two</li>
-                <li>item three</li>
-            </ul>
+        <p style={{margin: '1%', padding: '1%', }}>
+            <h3>current items</h3>
+        </p>
+        <p style={{padding: '5%', margin: '1%'}}>
+                <p>item one</p>
+                <p>item two</p>
+                <p>item three</p>
         </p>
         </div>
 
         <div className='shoppingCartInfoBox'>
             <p style={{ width: '100%',  background: 'inherit'}}> 
-          <h3>information</h3>
+          <h3 style={{ padding: '1%'}} >information</h3>
             <br />
             name
             <br />
@@ -41,7 +39,7 @@ export default function ShoppingCart() {
             
             <p style={{ background: 'inherit'}}>
                 <h3>
-                    Check Out
+                    check out
                 </h3>
                 <br />
                 total : $100.00
