@@ -10,7 +10,10 @@ export default function NavBar() {
     <div className="NavBarMainBox"> 
 
 <p style={{ width: '100%'}}>
-<p className="NavBarTitle">Smash Burger Bros</p>
+  <p style={{ display: 'flex', justifyContent: 'center', width: '100%'}}>
+    <p className="NavBarTitle">Smash Burger Bros</p>
+  </p>
+
   <br />
   <div className="NavBarSubBox">
     <NavLink className='NavBarFontSpecial' to='/'>HOME</NavLink>  

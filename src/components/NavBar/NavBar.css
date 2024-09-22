@@ -10,6 +10,7 @@
     width: 100%;
     justify-content: space-around;
     align-items: center;
+    padding-bottom: 1%;
 }
 
 .NavBarMainBox {
@@ -23,11 +24,11 @@
 }
 
 .NavBarTitle {
-    width: 100%;
-    margin: 1%;
+    width: fit-content;
     display: flex;
     justify-content: center;
     font-family: "Smokum";
     font-size: 62px;
     font-weight: 900;
+    border-bottom: 3px orange dotted ;
 }

@@ -1,2 +1,21 @@
 
 .storePageMainBox {}
+
+.storePageSideBarMainBox {
+    border-right: 1px orangered solid;
+    border-bottom: 1px orangered dotted;
+    position: absolute;
+    height: auto;
+    width: 15vh;
+    margin: 1%;
+    padding: 1%;
+}
+.storePageSideBarThreads {
+    width: 100%;
+    height: auto;
+    margin: .5%;
+}
+
+.storePageSideBarButton {
+    width: 100%;
+}
