@@ -1,4 +1,4 @@
-
+import './SideBar.css'
 
 export default function SideBar() {
   return (
@@ -30,7 +30,7 @@ export default function SideBar() {
           </p>
         </div>
 
-        <div >
+        <div className='storePageSideBarThreads' >
           <h2>
             cook books
           </h2>

@@ -9,13 +9,6 @@
     width: 15vh;
     margin: 1%;
     padding: 1%;
-}
-.storePageSideBarThreads {
-    width: 100%;
-    height: auto;
-    margin: .5%;
-}
-
-.storePageSideBarButton {
-    width: 100%;
+    font-family: 'smokum';
+    font-size: 22px;
 }

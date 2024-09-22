@@ -2,8 +2,11 @@
     width: 100%;
     height: auto;
     margin: .5%;
+    font-family: 'smokum';
+    font-size: 22px;
 }
 
 .storePageSideBarButton {
     width: 100%;
+    font-size: 18px;
 }
