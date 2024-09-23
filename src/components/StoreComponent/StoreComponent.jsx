@@ -6,25 +6,49 @@ import Sweatshirts from '../StoreAisles/Sweatshirts/Sweatshirts'
 import Hats from '../StoreAisles/Hats/Hats'
 import Cooksbooks from '../StoreAisles/Cookbooks/Cookbooks'
 import Aprons from '../StoreAisles/Aprons/Aprons'
-import { useState } from 'react'
+import { useState, useReducer } from 'react'
 import './StoreComponent.css'
 
-
+function reducer(state, action) {
+    switch (action.type) {
+        case 'incremented_age': {
+          return {
+            name: state.name,
+            age: state.age + 1
+          };
+        }
+        case 'changed_name': {
+          return {
+            name: action.nextName,
+            age: state.age
+          };
+        }
+      }
+      throw Error('Unknown action: ' + action.type);
+  }
+  
 
 export default function StoreComponent() {
 
+    const [state, dispatch] = useReducer(reducer, { name: 'Taylor', age: 42 });
+    const [ cart, setCart ] = useState(false);
+    const handleCart = () => {!cart ? setCart(true) : setCart(false)}
+    const [ aisle, setAisle ] = useState('')
+    const handleInputChange = (e) => {
+        dispatch({
+          type: 'changed_name',
+          nextName: e.target.value
+        });
+      }
 
-const [ cart, setCart ] = useState(false);
-const handleCart = () => {!cart ? setCart(true) : setCart(false)}
-const [ aisle, setAisle ] = useState('')
 
-const aisles = {
-    shirts: <Shirts />,
-    sweathshirts: <Sweatshirts />,
-    hats: <Hats />,
-    aprons: <Aprons />,
-    cookbooks: <Cooksbooks/>,
-  }
+    const aisles = {
+        shirts: <Shirts />,
+        sweathshirts: <Sweatshirts />,
+        hats: <Hats />,
+        aprons: <Aprons />,
+        cookbooks: <Cooksbooks/>,
+    }
 
 
   return (
@@ -73,6 +97,13 @@ const aisles = {
             </div>
                 { cart ? <ShoppingCart /> : ''} 
                 {aisle}
+                    <div style={{ width: '100%', display: 'flex', justifyContent: 'center'}}>
+                        <button onClick={() => {dispatch({ type: 'incremented_age' })}}>
+                            Increment age
+                        </button>
+                        <input value={state.name} onChange={handleInputChange} />
+                      <p>Hello, {state.name}. You are {state.age}.</p>
+                    </div>
         </div>
        
     </div>
