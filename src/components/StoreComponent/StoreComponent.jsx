@@ -6,7 +6,7 @@ import Sweatshirts from '../StoreAisles/Sweatshirts/Sweatshirts'
 import Hats from '../StoreAisles/Hats/Hats'
 import Cooksbooks from '../StoreAisles/Cookbooks/Cookbooks'
 import Aprons from '../StoreAisles/Aprons/Aprons'
-import { useState, useReducer } from 'react'
+import { useReducer } from 'react'
 import './StoreComponent.css'
 
 function reducer(state, action) {
@@ -22,7 +22,17 @@ function reducer(state, action) {
             name: action.nextName,
             age: state.age
           };
+        } 
+        case 'handle_cart': {
+        return {
+            toggle: true
+        }        
         }
+        case 'handle_close': {
+            return {
+                close: true
+            }        
+            }
       }
       throw Error('Unknown action: ' + action.type);
   }
@@ -30,17 +40,11 @@ function reducer(state, action) {
 
 export default function StoreComponent() {
 
-    const [state, dispatch] = useReducer(reducer, { name: 'Taylor', age: 42 });
-    const [ cart, setCart ] = useState(false);
-    const handleCart = () => {!cart ? setCart(true) : setCart(false)}
-    const [ aisle, setAisle ] = useState('')
-    const handleInputChange = (e) => {
-        dispatch({
-          type: 'changed_name',
-          nextName: e.target.value
-        });
-      }
-
+    const [state, dispatch] = useReducer(reducer, {toggle: false, close: true });
+   
+    const handleClose = () => { dispatch({ type: 'handle_close', close: false, toggle: true})}
+    const handleCart = () => { dispatch({ type: 'handle_cart', toggle: true, close: true})}
+  
 
     const aisles = {
         shirts: <Shirts />,
@@ -55,6 +59,7 @@ export default function StoreComponent() {
     <div>
         <div>
             <div className='storeComponentSideBarMainBox' >
+
                 <h2>threads</h2>
                     <p>
                     <button className='storeComponentSideBarButton'>
@@ -90,20 +95,28 @@ export default function StoreComponent() {
                     </p>
 
                 <h2>checkout</h2>
-                    
-                    <button className='storeComponentSideBarButton' onClick={handleCart}>
-                    show cart
-                    </button>
-            </div>
-                { cart ? <ShoppingCart /> : ''} 
-                {aisle}
+                    {   state.close 
+                    ?   <button 
+                            className='storeComponentSideBarButton' 
+                            onClick={handleCart}>
+                                show cart
+                        </button> 
+                    :   <button 
+                            style={{ color: 'orange', backgroundColor: 'maroon'}} 
+                            className='storeComponentSideBarButton' 
+                            onClick={handleClose}>
+                                close cart
+                        </button>}
+                </div>
+                
+                { state.toggle ? <ShoppingCart  /> : ''} 
+
+                <div style={{ width: '100%', display: 'flex', flexWrap: 'wrap', justifyContent: 'center'}}>
+                
                     <div style={{ width: '100%', display: 'flex', justifyContent: 'center'}}>
-                        <button onClick={() => {dispatch({ type: 'incremented_age' })}}>
-                            Increment age
-                        </button>
-                        <input value={state.name} onChange={handleInputChange} />
-                      <p>Hello, {state.name}. You are {state.age}.</p>
+                        {aisles.shirts}
                     </div>
+                </div>
         </div>
        
     </div>
