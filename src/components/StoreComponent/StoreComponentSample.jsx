@@ -63,7 +63,7 @@ export default function StoreComponent() {
          <button className='storeComponentSideBarButton' onClick={() => handleAisleSelect('pnw')}>
             pnw cuisine
          </button>
-         <button className='storeComponentSideBarButton' onClick={() => handleAisleSelect('deep_griddle')}>
+         <button className='storeComponentSideBarButton' onClick={() => handleAisleSelect('deepGriddle')}>
             deep griddle
          </button>
         </p>
@@ -81,7 +81,7 @@ export default function StoreComponent() {
       {state.cartVisible && <ShoppingCart />} 
 
       <div style={{ width: '100%', display: 'flex', flexWrap: 'wrap', justifyContent: 'center'}}>
-        <div style={{ width: '100%', display: 'flex', justifyContent: 'center'}}>
+        <div style={{ width: '100%', display: 'flex', justifyContent: 'center', marginLeft: '2%'}}>
           {state.selectedAisle === 'shirts' && <Shirts />}
           {state.selectedAisle === 'sweatshirts' && <Sweatshirts />}
           {state.selectedAisle === 'hats' && <Hats />}

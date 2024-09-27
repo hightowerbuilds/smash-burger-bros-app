@@ -1,4 +1,23 @@
 
-.shirtsMainBox {
+
+
+.shirtsHeading {
+    display: flex;
+    justify-content: start;
+    width: 80vh;
+    border: 1px solid black;
+    margin: 1%;
+}
+
+.shirtsImageBox {
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    width: 100vh;
+    border: 1px solid black;
     
+}
+
+.shirtsImage {
+    margin: 1%;
 }
