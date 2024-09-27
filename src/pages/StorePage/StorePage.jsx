@@ -1,13 +1,13 @@
 
 import NavBar from '../../components/NavBar/NavBar'
-import StoreComponent from '../../components/StoreComponent/StoreComponent'
+import StoreComponentSample from '../../components/StoreComponent/StoreComponentSample'
 
 export default function StorePage() {
 
   return (
     <div>
       <NavBar />
-      <StoreComponent />   
+      <StoreComponentSample />   
     </div>
 
   )

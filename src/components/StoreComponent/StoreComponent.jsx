@@ -24,14 +24,19 @@ function reducer(state, action) {
           };
         } 
         case 'handle_cart': {
-        return {
+            return {
             toggle: true
-        }        
+        };       
         }
         case 'handle_close': {
             return {
                 close: true
-            }        
+            };        
+            }
+        case 'handle_aisle': {
+            return {
+                aisle: false
+            };        
             }
       }
       throw Error('Unknown action: ' + action.type);
@@ -40,19 +45,12 @@ function reducer(state, action) {
 
 export default function StoreComponent() {
 
-    const [state, dispatch] = useReducer(reducer, {toggle: false, close: true });
+    const [state, dispatch] = useReducer(reducer, {toggle: false, close: true, aisle: false });
    
     const handleClose = () => { dispatch({ type: 'handle_close', close: false, toggle: true})}
     const handleCart = () => { dispatch({ type: 'handle_cart', toggle: true, close: true})}
-  
+    const handleAisle = () => { dispatch({ type: 'handle_aisle', aisle: true}) }
 
-    const aisles = {
-        shirts: <Shirts />,
-        sweathshirts: <Sweatshirts />,
-        hats: <Hats />,
-        aprons: <Aprons />,
-        cookbooks: <Cooksbooks/>,
-    }
 
 
   return (
@@ -62,7 +60,7 @@ export default function StoreComponent() {
 
                 <h2>threads</h2>
                     <p>
-                    <button className='storeComponentSideBarButton'>
+                    <button className='storeComponentSideBarButton' onClick={handleAisle}>
                     shirts 
                     </button>
                     <br />
@@ -107,18 +105,19 @@ export default function StoreComponent() {
                             onClick={handleClose}>
                                 close cart
                         </button>}
-                </div>
+                        
+            </div>
                 
-                { state.toggle ? <ShoppingCart  /> : ''} 
+            { state.toggle ? <ShoppingCart  /> : ''} 
 
-                <div style={{ width: '100%', display: 'flex', flexWrap: 'wrap', justifyContent: 'center'}}>
+            <div style={{ width: '100%', display: 'flex', flexWrap: 'wrap', justifyContent: 'center'}}>
+            
+            <div style={{ width: '100%', display: 'flex', justifyContent: 'center'}}>
                 
-                    <div style={{ width: '100%', display: 'flex', justifyContent: 'center'}}>
-                        {aisles.shirts}
-                    </div>
-                </div>
+            { state.aisle ? <Shirts /> : ''}
+            </div>
+            </div>
         </div>
-       
     </div>
   )
 }

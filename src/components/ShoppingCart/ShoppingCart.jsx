@@ -1,10 +1,10 @@
 
 import './ShoppingCart.css'
 
-export default function ShoppingCart(props) {
+export default function ShoppingCart() {
   return (
     <div className='shoppingCartMainBox'>
-        {props.button}
+     
         <div className='shoppingCartCurrentBox'>
         <p style={{margin: '1%', padding: '1%', }}>
             <h3>current items</h3>
