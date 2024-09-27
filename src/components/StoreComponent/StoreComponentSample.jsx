@@ -3,7 +3,8 @@ import Shirts from '../StoreAisles/Shirts/Shirts';
 import Sweatshirts from '../StoreAisles/Sweatshirts/Sweatshirts';
 import Hats from '../StoreAisles/Hats/Hats';
 import Aprons from '../StoreAisles/Aprons/Aprons';
-// import Cookbooks from '../StoreAisles/Cookbooks/Cookbooks'; // Assuming you have this component
+import PnwCuisine from '../StoreAisles/Cookbooks/PnwCuisine/PnwCuisine';
+import DeepGriddle from '../StoreAisles/Cookbooks/DeepGriddle/DeepGriddle'; // Assuming you have this component
 import { useReducer } from 'react';
 import './StoreComponent.css';
 
@@ -13,7 +14,6 @@ function reducer(state, action) {
       return { ...state, cartVisible: action.payload };
     case 'TOGGLE_AISLE':
       return { ...state, selectedAisle: action.payload };
-    // ... other actions as needed (e.g., for cookbooks)
   }
   throw Error('Unknown action: ' + action.type);
 }
@@ -21,7 +21,7 @@ function reducer(state, action) {
 export default function StoreComponent() {
   const [state, dispatch] = useReducer(reducer, { 
     cartVisible: false, 
-    selectedAisle: null, 
+    selectedAisle: 'shirts', 
   });
 
   const handleCartToggle = () => { 
@@ -60,8 +60,12 @@ export default function StoreComponent() {
 
         <h2>cook books</h2>
         <p>
-          {/* ... buttons for french, pnw cuisine, etc. 
-               with appropriate onClick handlers */}
+         <button className='storeComponentSideBarButton' onClick={() => handleAisleSelect('pnw')}>
+            pnw cuisine
+         </button>
+         <button className='storeComponentSideBarButton' onClick={() => handleAisleSelect('deep_griddle')}>
+            deep griddle
+         </button>
         </p>
 
         <h2>checkout</h2>
@@ -82,9 +86,8 @@ export default function StoreComponent() {
           {state.selectedAisle === 'sweatshirts' && <Sweatshirts />}
           {state.selectedAisle === 'hats' && <Hats />}
           {state.selectedAisle === 'aprons' && <Aprons />}
-          {/* ... other aisles based on selectedAisle */}
-
-          {/* ... potential rendering for cookbooks based on state */}
+          {state.selectedAisle === 'pnw' && <PnwCuisine />}
+          {state.selectedAisle === 'deep_griddle' && <DeepGriddle />}
         </div>
       </div>
     </div>
