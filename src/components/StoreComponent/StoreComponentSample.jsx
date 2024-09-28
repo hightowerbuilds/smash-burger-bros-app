@@ -1,3 +1,5 @@
+
+import Aisle from '../Aisle/Aisle'
 import ShoppingCart from '../../components/ShoppingCart/ShoppingCart';
 import Shirts from '../StoreAisles/Shirts/Shirts';
 import Sweatshirts from '../StoreAisles/Sweatshirts/Sweatshirts';
@@ -59,36 +61,37 @@ export default function StoreComponent() {
         </p>
 
         <h2>cook books</h2>
-        <p>
-         <button className='storeComponentSideBarButton' onClick={() => handleAisleSelect('pnw')}>
-            pnw cuisine
-         </button>
-         <button className='storeComponentSideBarButton' onClick={() => handleAisleSelect('deepGriddle')}>
-            deep griddle
-         </button>
-        </p>
+            <p>
+            <button className='storeComponentSideBarButton' onClick={() => handleAisleSelect('pnw')}>
+                pnw cuisine
+            </button>
+            <button className='storeComponentSideBarButton' onClick={() => handleAisleSelect('deepGriddle')}>
+                deep griddle
+            </button>
+            </p>
 
         <h2>checkout</h2>
-        <button 
-          className='storeComponentSideBarButton' 
-          onClick={handleCartToggle}
-        >
-          {state.cartVisible ? 'Close Cart' : 'Show Cart'} 
-        </button>
+            <button 
+            className='storeComponentSideBarButton' 
+            onClick={handleCartToggle}
+            >
+            {state.cartVisible ? 'Close Cart' : 'Show Cart'} 
+            </button>
 
       </div>
 
       {state.cartVisible && <ShoppingCart />} 
 
       <div style={{ width: '100%', display: 'flex', flexWrap: 'wrap', justifyContent: 'center'}}>
-        <div style={{ width: '100%', display: 'flex', justifyContent: 'center', marginLeft: '2%'}}>
-          {state.selectedAisle === 'shirts' && <Shirts />}
-          {state.selectedAisle === 'sweatshirts' && <Sweatshirts />}
-          {state.selectedAisle === 'hats' && <Hats />}
-          {state.selectedAisle === 'aprons' && <Aprons />}
-          {state.selectedAisle === 'pnw' && <PnwCuisine />}
-          {state.selectedAisle === 'deep_griddle' && <DeepGriddle />}
-        </div>
+            <div style={{ width: '100%', display: 'flex', justifyContent: 'center', marginLeft: '2%'}}>
+            {/* {state.selectedAisle === 'shirts' && <Shirts />}
+            {state.selectedAisle === 'sweatshirts' && <Sweatshirts />}
+            {state.selectedAisle === 'hats' && <Hats />}
+            {state.selectedAisle === 'aprons' && <Aprons />}
+            {state.selectedAisle === 'pnw' && <PnwCuisine />}
+            {state.selectedAisle === 'deep_griddle' && <DeepGriddle />} */}
+            {<Aisle heading={'test'} aisle={true} />}
+            </div>
       </div>
     </div>
   );

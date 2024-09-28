@@ -6,23 +6,21 @@ export default function Sweatshirts() {
     <div className='shirtsMainBox'>
   
     <h3 className='shirtsHeading'>
-      Shirts
+        Shirts
     </h3>
     <div className='shirtsImageBox'>
   
-    <img src={Homer} className='shirtsImage' />
-    <img src={Homer} className='shirtsImage' />
-    <img src={Homer} className='shirtsImage' />
-    <img src={Homer} className='shirtsImage' />
-    <img src={Homer} className='shirtsImage' />
-    <img src={Homer} className='shirtsImage' />
-    <img src={Homer} className='shirtsImage' />
-    <img src={Homer} className='shirtsImage' />
-    <img src={Homer} className='shirtsImage' />
+        <img src={Homer} className='shirtsImage' />
+        <img src={Homer} className='shirtsImage' />
+        <img src={Homer} className='shirtsImage' />
+        <img src={Homer} className='shirtsImage' />
+        <img src={Homer} className='shirtsImage' />
+        <img src={Homer} className='shirtsImage' />
+        <img src={Homer} className='shirtsImage' />
+        <img src={Homer} className='shirtsImage' />
+        <img src={Homer} className='shirtsImage' />
   
     </div>
-  
-
     </div>
   )
 }
