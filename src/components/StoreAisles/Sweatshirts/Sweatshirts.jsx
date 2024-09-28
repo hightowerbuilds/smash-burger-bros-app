@@ -6,7 +6,7 @@ export default function Sweatshirts() {
     <div className='shirtsMainBox'>
   
     <h3 className='shirtsHeading'>
-        Shirts
+        Swaet Shirts
     </h3>
     <div className='shirtsImageBox'>
   

@@ -1,28 +1,33 @@
+
+
 import './Shirts.css'
-import Homer from '../../../images/browser/happyHomer.jpg'
+/**
+ *  need to find picture of shirts to fill 
+ *  the image object and array below
+ * 
+ *  bring images in from supabase... 
+ */
 
 export default function Shirts() {
+
+  const images = {
+    newShirts: [],
+    menShirts: [],
+    womenShirts: [],
+    clearance: []
+  }
+
   return (
+
     <div className='shirtsMainBox'>
-  
     <h3 className='shirtsHeading'>
       Shirts
     </h3>
     <div className='shirtsImageBox'>
   
-    <img src={Homer} className='shirtsImage' />
-    <img src={Homer} className='shirtsImage' />
-    <img src={Homer} className='shirtsImage' />
-    <img src={Homer} className='shirtsImage' />
-    <img src={Homer} className='shirtsImage' />
-    <img src={Homer} className='shirtsImage' />
-    <img src={Homer} className='shirtsImage' />
-    <img src={Homer} className='shirtsImage' />
-    <img src={Homer} className='shirtsImage' />
+
   
     </div>
-  
-
     </div>
   )
 }

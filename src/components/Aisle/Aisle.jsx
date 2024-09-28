@@ -21,6 +21,8 @@ export default function Aisle(props) {
        deepGriddle: []
     }
 
+    const shirtBox = {}
+
     const handleProps = () => {
         if (props.aisle === true){
             return console.log(images.shirts)

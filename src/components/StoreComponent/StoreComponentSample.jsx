@@ -84,15 +84,15 @@ export default function StoreComponent() {
 
       <div style={{ width: '100%', display: 'flex', flexWrap: 'wrap', justifyContent: 'center'}}>
             <div style={{ width: '100%', display: 'flex', justifyContent: 'center', marginLeft: '2%'}}>
-            {/* {state.selectedAisle === 'shirts' && <Shirts />}
+            {state.selectedAisle === 'shirts' && <Shirts />}
             {state.selectedAisle === 'sweatshirts' && <Sweatshirts />}
             {state.selectedAisle === 'hats' && <Hats />}
             {state.selectedAisle === 'aprons' && <Aprons />}
             {state.selectedAisle === 'pnw' && <PnwCuisine />}
-            {state.selectedAisle === 'deep_griddle' && <DeepGriddle />} */}
-            {<Aisle heading={'test'} aisle={true} />}
+            {state.selectedAisle === 'deep_griddle' && <DeepGriddle />}
+         
             </div>
       </div>
-    </div>
+    </div>  
   );
 }
