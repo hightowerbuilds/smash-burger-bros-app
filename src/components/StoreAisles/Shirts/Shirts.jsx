@@ -1,4 +1,5 @@
 
+
 import whiteShirt from '../../../images/browser/whiteShirt.jpeg'
 import tShrit from '../../../images/browser/t-shirt.jpeg'
 import greenShirt from '../../../images/browser/greenShirt.jpg'
@@ -23,13 +24,13 @@ export default function Shirts() {
   return (
     <div className='shirtsMainBox'>
       <h3 className='shirtsHeading'>Shirts</h3>
-      <div className='shirtsImageBox'>
-          {
-            images.newShirts.map( (image) => (
-              <img key={0} src={image} />
-            ))
-          }
-      </div>
+        <div className='shirtsImageBox'>
+            {
+              images.newShirts.map( (image) => (
+                <img key={0} src={image} />
+              ))
+            }
+        </div>
     </div>
   )
 }
