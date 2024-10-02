@@ -90,7 +90,7 @@ export default function StoreComponent() {
             {state.selectedAisle === 'aprons' && <Aprons />}
             {state.selectedAisle === 'pnw' && <PnwCuisine />}
             {state.selectedAisle === 'deep_griddle' && <DeepGriddle />}
-         
+         test
             </div>
       </div>
     </div>  
