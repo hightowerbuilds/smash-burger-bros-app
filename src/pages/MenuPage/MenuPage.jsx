@@ -38,10 +38,6 @@ export default function MenuPage() {
       </div>
     </div>
     
-      
-      
-
-   
     </div>
   )
 }
